@@ -34,7 +34,7 @@ const App: FC = () => {
           </Layout>
         </StateProvider>
       </BrowserRouter>
-      <ReactQueryDevtools />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };
