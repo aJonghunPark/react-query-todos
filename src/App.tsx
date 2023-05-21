@@ -8,6 +8,8 @@ import { ClassicalFetchB } from "./components/ClassicalFetchB";
 import { Layout } from "./components/Layout";
 import { MainContext } from "./components/MainContext";
 import { MainRTKit } from "./components/MainRTKit";
+import { MainTag } from "./components/MainTag";
+import { MainTask } from "./components/MainTask";
 import { ReactQueryA } from "./components/ReactQueryA";
 import { ReactQueryB } from "./components/ReactQueryB";
 import { StateProvider } from "./context/StateProvider";
@@ -34,6 +36,8 @@ const App: FC = () => {
               <Route path="/fetch-b" element={<ClassicalFetchB />} />
               <Route path="/main-context" element={<MainContext />} />
               <Route path="/main-rtkit" element={<MainRTKit />} />
+              <Route path="/task" element={<MainTask />} />
+              <Route path="/tags" element={<MainTag />} />
             </Routes>
           </Layout>
         </StateProvider>

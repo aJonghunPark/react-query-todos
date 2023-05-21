@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# High Performance React Web 開発
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+https://www.udemy.com/share/104CFu3@vZWokXsE60n4G3KVANnZpC-AriSKQsKYryoqQERsM0zr4DuDyH3cVza4mWSKhaa1-g==/
 
-## Available Scripts
+Kazu T+さんの講座でReact QueryとReduxでTodoアプリを作ります。
+講座では二つのプロジェクトで行っていますが、私は一つにまとめてReact Routerで分岐する形を取りました。
+このリポジトリはReactで作成したフロントエンド側です。
 
-In the project directory, you can run:
+## nodeの環境構築
 
-### `npm start`
+私はnvmでnodeのバージョン管理を行っていますが、nodenvなど他のものを使っても構いません。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+brew install nvm
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+nvmで最新バージョンのnodeをインストールします。
+nvm ls-remote --ltsでインストールできるnodeのリストが表示されます。
+私は現時点の最新である18.15.0をインストールしました。
 
-### `npm test`
+```sh
+# インストールできるnodeのリストを確認
+nvm ls-remote --lts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# nodeをインストールする。
+nvm install 18.15.0
 
-### `npm run build`
+# インストールしたnodeのバージョンを確認
+nvm ls
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# インストールしたnodeのバージョンを指定
+nvm use 18.15.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# インストールしたnodeのバージョンをデフォルトで設定
+nvm alias default v18.15.0
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## プロジェクトの生成
 
-### `npm run eject`
+```sh
+create-react-app react-query-todos --template redux-typescript
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Reactのプロジェクトの場合は色々と下準備が必要です。
+[この文書](https://github.com/aJonghunPark/rtk-saga-crud/blob/main/doc/02.install.md)をご参照ください。
+上記の文書からRedux-Saga、MUIはインストールする必要がありません。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+下準備が終わったら、yarn startでクライアントを立ち上げます。
+apiサーバーのURLなどは環境毎に異なるため、gitではなく各サーバーの環境変数で管理するのが一般的です。
+yarn startする前に.env.localファイルを作成します。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+vim .env.local
 
-## Learn More
+REACT_APP_REST_URL=http://127.0.0.1:8000/api
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+:wq
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+yarn start
+```
+
+この場合、バックエンド側のサーバーも立ち上げないといけません。
+バックエンド側のサーバーは[ここ](https://github.com/aJonghunPark/django_restapi)をご確認ください。
+
+* React Queryのサンプル画面
+
+![サンプル01](./doc/react-query.png)
+
+* Regular Fetchのサンプル画面
+
+![サンプル02](./doc/regular-fetch.png)
+
+* useContextのサンプル画面
+
+![サンプル03](./doc/useContext.png)
+
+* RTKのサンプル画面
+
+![サンプル04](./doc/RTKit.png)
+
+* Todoアプリのサンプル画面
+
+![サンプル05](./doc/todo.png)
