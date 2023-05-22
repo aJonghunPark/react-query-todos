@@ -1,5 +1,13 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,vim,react
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,vim,react
+# Created by https://www.toptal.com/developers/gitignore/api/react,vim,macos,yarn,dotenv,direnv
+# Edit at https://www.toptal.com/developers/gitignore?templates=react,vim,macos,yarn,dotenv,direnv
+
+### direnv ###
+.direnv
+.envrc
+
+### dotenv ###
+.env
+.env.*
 
 ### macOS ###
 # General
@@ -71,4 +79,21 @@ tags
 # Persistent undo
 [._]*.un~
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,vim,react
+### yarn ###
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+
+.yarn/*
+!.yarn/releases
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# if you are NOT using Zero-installs, then:
+# comment the following lines
+!.yarn/cache
+
+# and uncomment the following lines
+# .pnp.*
+
+# End of https://www.toptal.com/developers/gitignore/api/react,vim,macos,yarn,dotenv,direnv
